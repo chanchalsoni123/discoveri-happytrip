@@ -18,11 +18,11 @@ pipeline {
 
 			}
 		}
-		stage('Deploy') {
-			steps{
-				echo "Deploying"
-				deploy adapters: [tomcat7(credentialsId: '613b2e60-93b3-4524-a02d-b8d92e1d093e', path: '', url: 'http://localhost:8085')], contextPath: 'happytrip', war: '**/*.war'
-			}
-		}
+		//stage('Deploy') {
+		//	steps{
+		//		echo "Deploying"
+		//		deploy adapters: [tomcat7(credentialsId: '613b2e60-93b3-4524-a02d-b8d92e1d093e', path: '', url: 'http://localhost:8085')], contextPath: 'happytrip', war: '**/*.war'
+		//	}
+		//}
 	}
 }
