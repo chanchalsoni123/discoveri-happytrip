@@ -18,6 +18,20 @@ pipeline {
 
 			}
 		}
+		
+		stage ('Archive')
+		{
+			steps {
+			  
+			  archiveArtifacts '**/*.jar'
+			
+			}
+		   
+		
+		}
+		
+		
+		
 		stage('Deploy') {
 			steps{
 				echo "Deploying"
