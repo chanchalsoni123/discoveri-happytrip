@@ -12,8 +12,8 @@ pipeline {
 				maven 'apache-maven-3.6.1'
 			}
 			steps {
-				powershell 'java -version'
-				powershell 'mvn -version'
+				//powershell 'java -version'
+				//powershell 'mvn -version'
 				powershell 'mvn clean package'
 
 			}
