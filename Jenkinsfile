@@ -36,18 +36,13 @@ pipeline {
             agent none
             steps {
                 script {
-                    def deploymentDelay = input id: 'Deploy', message: 'Deploy to production?', submitter: 'chanchal,admin', parameters: [choice(name: 'Approval', choices: ['YES', 'NO'], description: 'Deploy from STAGING to PRODUCTION?')]
+                    //def deploymentDelay =
+	           input id: 'Deploy', message: 'Deploy to production?', submitter: 'chanchal,admin', parameters: [choice(name: 'Approval', choices: ['YES', 'NO'], description: 'Deploy from STAGING to PRODUCTION?')]
                     
-			sleep time: deploymentDelay.toInteger(), unit: 'HOURS'
+			//sleep time: deploymentDelay.toInteger(), unit: 'HOURS'
                 }
             }
         }
-		
-		
-		
-		
-		
-		
 		stage('Deploy') {
 			steps{
 				echo "Deploying"
