@@ -21,6 +21,8 @@ pipeline {
 		stage('Mail')
 		{
 			steps{
+			
+				script{
 				try {
 				  notifySuccessful()
 				}catch(e)
@@ -28,6 +30,7 @@ pipeline {
 				currentBuild.result = "FAILED"
 				notifyFailed()
 				throw e
+				}
 				}
 			}
 		}
