@@ -1,12 +1,4 @@
 pipeline {
-	
-	      def notifySuccessful(){  
-            mail bcc: '', body: "<b>Build Status - success</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "chnchlsoni@gmail.com";
-      }  
-         def notifyFailed() {  
-          mail bcc: '', body: "<b>Build Status - Failed</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "chnchlsoni@gmail.com";  
-        }  
-	
 	agent any
 	stages {
 		stage('Source') { 
@@ -81,3 +73,11 @@ pipeline {
 
 	
 }
+
+void  notifySuccessful(){  
+            mail bcc: '', body: "<b>Build Status - success</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "chnchlsoni@gmail.com";
+      }  
+void notifyFailed() {  
+          mail bcc: '', body: "<b>Build Status - Failed</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "chnchlsoni@gmail.com";  
+        }  
+	
