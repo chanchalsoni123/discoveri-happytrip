@@ -15,6 +15,9 @@ pipeline {
 				//powershell 'java -version'
 				//powershell 'mvn -version'
 				powershell 'mvn clean package'
+				
+			}
+			steps{
 				try {
 				  notifySuccessful()
 				}catch(e)
