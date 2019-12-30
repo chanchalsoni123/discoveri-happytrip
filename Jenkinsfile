@@ -20,7 +20,7 @@ pipeline {
 		}
 		
 		
-		post{
+		
 			stage('Notification')
 			{
 				steps{
@@ -34,7 +34,7 @@ pipeline {
 			}
 				
 			}
-    }  
+     
 		
 		
 		stage ('Archive')
