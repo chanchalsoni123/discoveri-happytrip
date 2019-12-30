@@ -17,6 +17,9 @@ pipeline {
 				powershell 'mvn clean package'
 				
 			}
+		}
+		stage('Mail')
+		{
 			steps{
 				try {
 				  notifySuccessful()
