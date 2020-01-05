@@ -18,6 +18,19 @@ pipeline {
 				
 			}
 		}
+		
+		stage('Code Quality') {
+                   steps {
+                       script {
+                          def scannerHome = tool 'sonar-scanner';
+                          withSonarQubeEnv("sonar_qube") {
+                          sh "${tool("sonar-scanner")}/bin/sonar-scanner"
+                                       }
+                               }
+                           }
+		
+		}
+		
 		stage('Mail')
 		{
 			steps{
