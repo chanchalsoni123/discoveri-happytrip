@@ -23,8 +23,10 @@ pipeline {
                    steps {
                        script {
                           def scannerHome = tool 'sonar-scanner';
-                          withSonarQubeEnv('sonar_qube') {
-                          sh "${tool('sonar-scanner')}/bin/sonar-scanner"
+                          withSonarQubeEnv(credentialsId:'f06d50943d99574a872f14b67f148926669fc43c', installationName:'sonar_qube') {
+                          //sh "${tool('sonar-scanner')}/bin/sonar-scanner"
+				  
+				  sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
                                        }
                                }
                            }
