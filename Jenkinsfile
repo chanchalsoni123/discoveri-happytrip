@@ -21,14 +21,14 @@ pipeline {
 		
 		stage('Code Quality') {
                    steps {
-                       
+			   script{
                           withSonarQubeEnv('sonar_qube') {
                           //sh "${tool('sonar-scanner')}/bin/sonar-scanner"
 				  
-				  powershell 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
+				  sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
                                        }
                                }
-                           
+		   }
 		
 		}
 		
