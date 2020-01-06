@@ -24,7 +24,7 @@ pipeline {
 			   script{
                           withSonarQubeEnv('SonarQube') {
                           //sh "${tool('sonar-scanner')}/bin/sonar-scanner"
-				 powershell 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+				 sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
                                        }
                                }
 		   }
