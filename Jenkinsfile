@@ -21,15 +21,14 @@ pipeline {
 		
 		stage('Code Quality') {
                    steps {
-                       script {
-                          def scannerHome = tool 'sonar-scanner';
+                       
                           withSonarQubeEnv('sonar_qube') {
                           //sh "${tool('sonar-scanner')}/bin/sonar-scanner"
 				  
-				  sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
+				  powershell 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
                                        }
                                }
-                           }
+                           
 		
 		}
 		
