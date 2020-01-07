@@ -22,7 +22,8 @@ pipeline {
 		stage('Code Quality') {
                    steps {
 			   script{
-                          withSonarQubeEnv('SonarQube') {
+                        //  withSonarQubeEnv('SonarQube') {
+				   withSonarQubeEnv(credentialsId: 'sonartoken'){
                           //sh "${tool('sonar-scanner')}/bin/sonar-scanner"
 				 powershell 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
                                        }
