@@ -25,7 +25,7 @@ pipeline {
                         //  withSonarQubeEnv('SonarQube') {
 				   withSonarQubeEnv(installationName: 'sonar'){
                           //sh "${tool('sonar-scanner')}/bin/sonar-scanner"
-				 sh 'mvn sonar:sonar'
+		           bat label: '', script: 'mvn sonar:sonar'
                                        }
                                }
 		   }
