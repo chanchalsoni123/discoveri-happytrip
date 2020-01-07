@@ -89,9 +89,9 @@ pipeline {
 	
 	
 	
-	triggers {
-    pollSCM '* * * * *'
-}
+	//triggers {
+    //pollSCM '* * * * *'
+//}
 	
 
 	
