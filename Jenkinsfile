@@ -84,6 +84,30 @@ pipeline {
 		}
 		
 		
+		stage ('test)
+		       {
+		       
+			       steps{
+			       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/chanchalsoni123/HappyTripTestCases.git']]])
+		
+			       
+			       }
+			       
+			}
+		       stage('TestBuild') { 
+			tools {
+				jdk 'jdk8'
+				maven 'apache-maven-3.6.1'
+			}
+			steps {
+				//powershell 'java -version'
+				//powershell 'mvn -version'
+				powershell 'mvn test'
+				
+			}
+		}
+		
+		
 	}
 	
 	
